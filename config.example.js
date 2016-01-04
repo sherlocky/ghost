@@ -8,31 +8,31 @@ var path = require('path'),
 
 config = {
     // ### Production
-    // When running Ghost in the wild, use the production environment
+    // When running Ghost in the wild, use the production environment.
     // Configure your URL and mail settings here
     production: {
-        url: 'http://gblog.xxx.com',
-		mail: {
-			transport: 'SMTP',
-			options: {
-				auth: {
-					user: 'xxx@gmail.com',
-					pass: 'xxx'
-				}
-			}
-		},		
-        // 配置MySQL 数据库
+        url: 'http://my-ghost-blog.com',
+        mail: {},
         database: {
-            client: 'mysql',
+            client: 'sqlite3',
             connection: {
-                host     : 'localhost',
-                user     : 'root',
-                password : 'xxxx',
-                database : 'xxxx',
-                charset  : 'utf8'
+                filename: path.join(__dirname, '/content/data/ghost.db')
             },
             debug: false
         },
+
+        // 配置MySQL 数据库
+        /*database: {
+            client: 'mysql',
+            connection: {
+                host     : 'host',
+                user     : 'user',
+                password : 'password',
+                database : 'database',
+                charset  : 'utf8'
+            },
+            debug: false
+        },*/
 
         server: {
             host: '127.0.0.1',
@@ -40,21 +40,23 @@ config = {
         },
 
         //Storage.Now,we can support `qiniu`,`upyun`, `aliyun oss`, `aliyun ace-storage` and `local-file-store`
-        /*storage: {
-            provider: 'local-file-store'
-        }*/
-       // 参考文档： http://www.ghostchina.com/qiniu-cdn-for-ghost/
         storage: {
+            provider: 'local-file-store'
+        }
+
+        // or
+        // 参考文档： http://www.ghostchina.com/qiniu-cdn-for-ghost/
+        /*storage: {
             provider: 'qiniu',
             bucketname: 'your-bucket-name',
             ACCESS_KEY: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
             SECRET_KEY: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
             root: '/image/',
             prefix: 'http://your-bucket-name.qiniudn.com'
-        }
+        }*/
 
         // or
-        // 参考文档： http://www.ghostchina.com/upyun-cdn-for-ghost/ 
+        // 参考文档： http://www.ghostchina.com/upyun-cdn-for-ghost/
         /*storage: {
             provider: 'upyun',
             bucketname: 'your-bucket-name',
@@ -65,7 +67,7 @@ config = {
         }*/
 
         // or
-        // 参考文档： http://www.ghostchina.com/aliyun-oss-for-ghost/ 
+        // 参考文档： http://www.ghostchina.com/aliyun-oss-for-ghost/
         /*storage: {
             provider: 'oss',
             bucketname: 'your-bucket-name',
@@ -80,33 +82,35 @@ config = {
     // ### Development **(default)**
     development: {
         // The url to use when providing links to the site, E.g. in RSS and email.
-        // Change this to your Ghost blogs published URL.
-        url: 'http://gblog.sherlocky.com',
+        // Change this to your Ghost blog's published URL.
+        url: 'http://localhost:2368',
 
         // Example mail config
         // Visit http://support.ghost.org/mail for instructions
-		mail: {
-			transport: 'SMTP',
-			options: {
-				auth: {
-					user: 'xxx@gmail.com',
-					pass: 'xxx'
-				}
-			}
-		},		
-       // 配置MySQL 数据库
+        // ```
+        //  mail: {
+        //      transport: 'SMTP',
+        //      options: {
+        //          service: 'Mailgun',
+        //          auth: {
+        //              user: '', // mailgun username
+        //              pass: ''  // mailgun password
+        //          }
+        //      }
+        //  },
+        // ```
+
+        // #### Database
+        // Ghost supports sqlite3 (default), MySQL & PostgreSQL
         database: {
-            client: 'mysql',
+            client: 'sqlite3',
             connection: {
-                host     : 'localhost',
-                user     : 'root',
-                password : 'xxxx',
-                database : 'xxx',
-                charset  : 'utf8'
+                filename: path.join(__dirname, '/content/data/ghost-dev.db')
             },
             debug: false
         },
-
+        // #### Server
+        // Can be host & port (default), or socket
         server: {
             // Host to be passed to node's `net.Server#listen()`
             host: '127.0.0.1',
@@ -117,19 +121,7 @@ config = {
         // Specify where your content directory lives
         paths: {
             contentPath: path.join(__dirname, '/content/')
-        },
-		
-        /*storage: {
-            provider: 'local-file-store'
-        }*/
-		storage: {
-            provider: 'xxx',
-            bucketname: 'xx',
-            ACCESS_KEY: 'xxx',
-            SECRET_KEY: 'xxxx',
-            root: '/',
-            prefix: 'xxxx'
-        }			
+        }
     },
 
     // **Developers only need to edit below here**
