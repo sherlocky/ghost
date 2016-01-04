@@ -48,6 +48,15 @@ Node.js 是必须的，同样也是建议使用  **Node v0.10.x** 的最新版�
     - 生产环境：`npm start --production`
 1. 启动浏览器，打开 `http://localhost:2368/ghost` 链接
 
+# 让 Ghost 一直运行
+
+你可以使用 [**forever**](https://npmjs.org/package/forever) 以后台任务运行 Ghost，forever 将会按照 Ghost 的配置，当进程 crash 后重启 Ghost。
+
+1. 通过 `npm install forever -g` 安装 forever
+1. 以生产环境启动 `NODE_ENV=production forever start index.js`
+1. 通过 `forever stop index.js` 停止 Ghost
+1. 通过 `forever list` 检查 Ghost 当前是否正在运行
+
 <a name="getting-started"></a>
 # 开发者(从 git 下载 Ghost)
 
