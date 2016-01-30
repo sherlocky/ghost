@@ -18,7 +18,7 @@
     11. Media Queries (Tablet)
     12. Media Queries (Mobile)
     13. Animations
-
+	14. Sherlocky-defined
 */
 
 /* ==========================================================================
@@ -2065,3 +2065,27 @@ body:not(.post-template) .post-title {
    End of file. Animations should be the last thing here. Do not add stuff
    below this point, or it will probably fuck everything up.
    ========================================================================== */
+
+/* ==========================================================================
+14. Sherlocky-defined
+========================================================================== */
+   
+.tag-cloud a {
+	border: 1px solid #ebebeb;
+	padding: 2px 7px;
+    color: #959595;
+    line-height: 1.5em;
+    display: inline-block;
+    margin: 0 7px 7px 0;
+    -webkit-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+	text-decoration: none;
+}
+
+.tag-cloud a:hover {
+  color: #ffffff;
+  background: #88beec;
+  border: 1px solid #88beec;
+  text-decoration: none;
+}
