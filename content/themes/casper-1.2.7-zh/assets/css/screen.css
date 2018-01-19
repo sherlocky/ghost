@@ -827,7 +827,7 @@ body.nav-opened .nav {
     width: auto;
 }
 
-.menu-button {
+.menu-button, .menu-search-button {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -846,35 +846,42 @@ body.nav-opened .nav {
     border-radius: 3px;
     transition: all 0.5s ease;
 }
-.menu-button:before {
+.menu-search-button {
+	border: none;
+}
+.menu-button:before, .menu-search-button:before {
     font-size: 12px;
     font-weight: normal;
     margin-right: 6px;
     position: relative;
     top: 1px;
 }
-.menu-button:hover {
+.menu-search-button:before {
+    font-size: 32px;
+    top: 3px;
+}
+.menu-button:hover, .menu-search-button:hover {
     background: #fff;
 }
-.menu-button:focus {
+.menu-button:focus, .menu-search-button:focus {
     outline: 0;
 }
 
 /* When the navigation is closed */
-.nav-closed .menu-button {
+.nav-closed .menu-button, .nav-closed .menu-search-button {
     color: #fff;
     border-color: rgba(255, 255, 255, 0.6);
 }
-.nav-closed .menu-button:hover {
+.nav-closed .menu-button:hover, .nav-closed .menu-search-button:hover {
     color: #222;
 }
 
 /* When the navigation is closed and there is no cover image */
-.nav-closed .no-cover .menu-button {
+.nav-closed .no-cover .menu-button, .nav-closed .no-cover .menu-search-button {
     border-color: #BFC8CD;
     color: #9EABB3;
 }
-.nav-closed .no-cover .menu-button:hover {
+.nav-closed .no-cover .menu-button:hover, .nav-closed .no-cover .menu-search-button:hover {
     border-color: #555;
     color: #555;
 }
@@ -1818,14 +1825,14 @@ body:not(.post-template) .post-title {
         height: 30px;
     }
 
-    .menu-button {
+    .menu-button, .menu-search-button {
         padding: 0 5px;
         border-radius: 0;
         border-width: 0;
         color: #2e2e2e;
         background: transparent;
     }
-    .menu-button:hover {
+    .menu-button:hover, .menu-search-button:hover {
         color: #2e2e2e;
         border-color: transparent;
         background: none;
