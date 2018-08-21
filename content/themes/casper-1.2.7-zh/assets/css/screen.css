@@ -216,9 +216,10 @@ h4, h5, h6 {
     margin: 0 0 0.4em 0;
     text-rendering: geometricPrecision;
 }
-/**s**/
+/** start **/
 h1, h2, h3, h4 {
-    color: #10a3ee;
+    /* color: #10a3ee; */
+	color: #1f2f3d
 }
 h1, h2, h3 {
     font-weight: normal;
@@ -236,7 +237,7 @@ h2, h3 {
     margin-top: 1.5em;
     margin-bottom: 0.8em;
 }
-/**e**/
+/** end **/
 h1 {
     /*font-size: 5rem;*/
 	font-size: 1.7em;
@@ -290,7 +291,8 @@ h6 {
 }
 
 a {
-    color: #4A4A4A;
+    /* color: #4A4A4A; */
+	color: #409eff;
     transition: color 0.3s ease;
 }
 
@@ -353,9 +355,13 @@ hr {
 blockquote {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    margin: 1.75em 0 1.75em -2.2em;
-    padding: 0 0 0 1.75em;
-    border-left: #4A4A4A 0.4em solid;
+    /* margin: 1.75em 0 1.75em -2.2em; */
+	margin: 1.75em 0 1.75em 0;
+    /* padding: 0 0 0 1.75em; */
+	padding: 0.5em 0 0.5em 1.75em;
+    /* border-left: #4A4A4A 0.4em solid; */
+	border-left: #50bfff 0.4em solid;
+	background-color: #ecf8ff;
 }
 
 blockquote p {
@@ -379,7 +385,10 @@ blockquote cite {
 blockquote cite a { font-weight: normal; }
 
 mark {
-    background-color: #fdffb6;
+    /* background-color: #fdffb6; */
+	background-color: #50bfff;
+	padding: 0 0.25em 0 0.25em;
+	color: #fff;
 }
 
 code, tt {
@@ -387,8 +396,13 @@ code, tt {
     font-family: "Microsoft Yahei","WenQuanYi Micro Hei",Inconsolata, monospace, sans-serif;
     font-size: 0.85em;
     white-space: pre-wrap;
-    border: #E3EDF3 1px solid;
+    /*
+	border: #E3EDF3 1px solid;
     background: #F7FAFB;
+	*/
+	border: 1px solid rgba(64,158,255,.2);
+    background-color: rgba(64,158,255,.1);
+	color: #409EFF;
     border-radius: 2px;
 }
 
@@ -396,14 +410,18 @@ pre {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     margin: 0 0 1.75em 0;
-    border: #E3EDF3 1px solid;
     width: 100%;
     padding: 10px;
     font-family: "Microsoft Yahei","WenQuanYi Micro Hei",Inconsolata, monospace, sans-serif;
     font-size: 0.9em;
     white-space: pre;
     overflow: auto;
+	/*
+    border: #E3EDF3 1px solid;	
     background: #F7FAFB;
+	*/
+	border: 1px solid rgba(64,158,255,.2);
+    background-color: rgba(64,158,255,.1);
     border-radius: 3px;
 }
 
