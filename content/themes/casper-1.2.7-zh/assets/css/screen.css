@@ -411,7 +411,8 @@ pre {
     box-sizing: border-box;
     margin: 0 0 1.75em 0;
     width: 100%;
-    padding: 10px;
+    /* padding: 10px; */
+	padding: 0px;
     font-family: "Microsoft Yahei","WenQuanYi Micro Hei",Inconsolata, monospace, sans-serif;
     font-size: 0.9em;
     white-space: pre;
