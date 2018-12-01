@@ -62,7 +62,8 @@
                                             post = {
                                                 title: $('title', $this).text(),  // 标题
                                                 link: $('link', $this).text(),  // 文章链接
-                                                content: $('encoded', $this).text().replace(/<[^>]*>|[ ]|[\r\n]/ig,''),  // 文章内容
+                                                //content: $('encoded', $this).text().replace(/<[^>]*>|[ ]|[\r\n]/ig,''),  // 文章内容
+                                                content: $($this[0].getElementsByTagName('content:encoded')).text().replace(/<[^>]*>|[ ]|[\r\n]/ig,''),  // 文章内容(上面的方法取不到)
                                                 excerpt: $('description', $this).text().replace(/<[^>]*>|[ ]|[\r\n]/g,''),  //描述
                                                 author: $('creator', $this).text(),  // 作者
                                                 category: $('category', $this).text(),  // 分类
@@ -97,7 +98,8 @@
                             var next = true;
 
                             $.each(post, function () {
-                                if (next && this.match(keywords) !== null) {
+								// 过滤（搜索时）关键词忽略大小写
+                                if (next && this.match(new RegExp(keywords, 'i')) !== null) {
 
                                     // 截取描述字符串
                                     post.excerpt = post.excerpt.slice(0,options.excerpt);
@@ -134,8 +136,10 @@
 
                                     // 关键词高亮显示
                                     if (key !== 'link') {
-                                        var reg = new RegExp(keywords, 'g');
-                                        value = value.replace(reg, '<em>' + keywords + '</em>');
+										// 关键词高亮显示 忽略大小写
+                                        var reg = new RegExp(keywords, 'ig');
+										// 高亮匹配到的结果词 '$&'（原来是高亮关键字）
+                                        value = value.replace(reg, "<em>$&</em>");
                                     }
 
                                     // 替换模板变量
