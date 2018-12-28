@@ -14297,7 +14297,7 @@ define("ghost/templates/components/gh-nav-menu", ["exports"], function (exports)
           dom.appendChild(el0, el1);
           var el1 = dom.createElement("div");
           dom.setAttribute(el1, "class", "gh-nav-menu-icon");
-          dom.setAttribute(el1, "style", "background-image: url(http://7xljyg.com1.z0.glb.clouddn.com/b/73/3d393dea6ef03994a875106d45656.png-icon)");
+          dom.setAttribute(el1, "style", "background-image: url(https://ghost.oss.sherlocky.com/b/73/3d393dea6ef03994a875106d45656.png-icon)");
           dom.appendChild(el0, el1);
           var el1 = dom.createTextNode("\n    ");
           dom.appendChild(el0, el1);
