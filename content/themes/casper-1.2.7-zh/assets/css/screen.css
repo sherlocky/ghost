@@ -2144,11 +2144,13 @@ body:not(.post-template) .post-title {
 /* ==========================================================================
 14. Sherlocky-defined
 ========================================================================== */
-   
+
+/** tag cloud custom style (以目前数据量来看，30篇以上tag已经很少) */   
 .tag-cloud a {
 	border: 1px solid #ebebeb;
 	padding: 2px 7px;
-    color: #959595;
+    /*color: #959595;*/
+	color: #ffffff;
     line-height: 1.5em;
     display: inline-block;
     margin: 0 7px 7px 0;
@@ -2159,8 +2161,53 @@ body:not(.post-template) .post-title {
 }
 
 .tag-cloud a:hover {
-  color: #ffffff;
+  /*color: #ffffff;*/
   background: #88beec;
   border: 1px solid #88beec;
   text-decoration: none;
+}
+.tag-item {
+	font-size: 36px;
+	background: rgb(245, 141, 178);
+	/* background: rgb(242, 179, 201); */
+}
+.tag-item-size-1, .tag-item-size-2, .tag-item-size-3 {
+    font-size: 16px;
+    background: rgb(63, 177, 227);
+}
+.tag-item-size-4, .tag-item-size-5, .tag-item-size-6 {
+    font-size: 18px;
+    background: rgb(107, 230, 193);
+}
+.tag-item-size-7, .tag-item-size-8, .tag-item-size-9 {
+    font-size: 20px;
+    background: rgb(98, 108, 145);
+}
+.tag-item-size-10, .tag-item-size-11, .tag-item-size-12 {
+    font-size: 22px;
+    background: rgb(160, 167, 230);
+}
+.tag-item-size-13, .tag-item-size-14, .tag-item-size-15 {
+    font-size: 24px;
+    background: rgb(196, 235, 173);
+}
+.tag-item-size-16, .tag-item-size-17, .tag-item-size-18 {
+    font-size: 26px;
+    background: rgb(150, 222, 232);
+}
+.tag-item-size-19, .tag-item-size-20, .tag-item-size-21 {
+    font-size: 28px;
+    background: rgb(78, 163, 151);
+}
+.tag-item-size-22, .tag-item-size-23, .tag-item-size-24 {
+    font-size: 30px;
+    background: rgb(34, 195, 170);
+}
+.tag-item-size-25, .tag-item-size-26, .tag-item-size-27 {
+    font-size: 32px;
+    background: rgb(123, 217, 165);
+}
+.tag-item-size-28, .tag-item-size-29, .tag-item-size-30 {
+    font-size: 34px;
+    background: rgb(208, 100, 138);
 }
