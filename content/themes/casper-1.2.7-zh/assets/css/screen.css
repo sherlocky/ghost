@@ -458,6 +458,11 @@ table {
     width: 100%;
     max-width: 100%;
     background-color: transparent;
+	/** 给表格添加默认的边框 */
+	border-collapse: collapse;
+	border-spacing: 0;
+	border: 1px solid #d9d9d9;
+	border-left: 0;
 }
 
 table th,
@@ -466,7 +471,10 @@ table td {
     line-height: 20px;
     text-align: left;
     vertical-align: top;
-    border-top: #EFEFEF 1px solid;
+    /*border-top: #EFEFEF 1px solid;*/
+	/** 给表格添加默认的边框 */
+	border-left: 1px solid #d9d9d9;
+	border-top: 1px solid #d9d9d9;
 }
 
 table th { color: #000; }
@@ -486,7 +494,8 @@ table table table { background-color: #FFF; }
 
 table tbody > tr:nth-child(odd) > td,
 table tbody > tr:nth-child(odd) > th {
-    background-color: #F6F6F6;
+    /*background-color: #F6F6F6;*/
+	background-color: #fafafa;
 }
 
 table.plain tbody > tr:nth-child(odd) > td,
