@@ -5931,7 +5931,7 @@ define('ghost/helpers/gh-format-html', ['exports', 'ember', 'ghost/utils/caja-sa
 define('ghost/helpers/gh-format-markdown', ['exports', 'ember', 'ghost/utils/caja-sanitizers'], function (exports, _ember, _ghostUtilsCajaSanitizers) {
     var Helper = _ember['default'].Helper;
 
-    var showdown = new Showdown.converter({ extensions: ['ghostimagepreview', 'ghostgfm', 'footnotes', 'highlight'] });
+    var showdown = new Showdown.converter({ extensions: ['ghostimagepreview', 'ghostgfm', 'footnotes', 'highlight', 'table'] });
 
     exports['default'] = Helper.helper(function (params) {
         if (!params || !params.length) {
