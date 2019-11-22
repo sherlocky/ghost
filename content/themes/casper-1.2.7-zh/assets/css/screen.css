@@ -467,7 +467,7 @@ table {
 
 table th,
 table td {
-    padding: 8px;
+    padding: 12px 10px;
     line-height: 20px;
     text-align: left;
     vertical-align: top;
@@ -478,6 +478,11 @@ table td {
 }
 
 table th { color: #000; }
+
+table th p,
+table td p {
+	margin-bottom: 0;
+}
 
 table caption + thead tr:first-child th,
 table caption + thead tr:first-child td,

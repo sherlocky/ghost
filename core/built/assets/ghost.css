@@ -2027,13 +2027,16 @@ table th,
 table td,
 .table th,
 .table td {
-  padding: 8px;
+  padding: 12px 10px;
   vertical-align: middle;
   text-align: left;
   line-height: 20px;
   /** 给表格添加默认边框 */  
   border-left: 1px solid #d9d9d9;
   border-top: 1px solid #d9d9d9;
+}
+table th p, table td p, .table th p, .table td p {
+	margin-bottom: 0;
 }
 /** 给表格奇数行添加背景 */  
 table tbody > tr:nth-child(odd) > td,
